@@ -1,6 +1,12 @@
 MBOX-SPLITTER
 
 	Splits an mbox file into chunks of a given size.
+	Taken from  zyxwu/mbox-splitter, improved speed and made usable for large .mbox files (tested with 27 gigs)
+
+	This program simply reads file in bytes chunks of 5 mb (editable), 
+	it then split the chunks into message based on the '\nFrom ' string,
+	then write the messages to an output file, summing bytes counts for each message along the way.
+	When the "size" setting is attained it will close the file and create a new one and keep going.
 
 
 Usage
@@ -19,3 +25,6 @@ Result
 	Created file `inbox_test_2.mbox`, size=44Mb, messages=2
 	Created file `inbox_test_3.mbox`, size=30Mb, messages=73
 	Done
+
+IMPROVEMENT
+	Clean the code, this was a "dirty" quick solution.
